@@ -21,11 +21,16 @@
   src: url('/public/font/Robo/RobotoMono-Regular.ttf');
 }
 
+@font-face {
+  font-family: 'Clock';
+  src: url('/public/font/Clock/RADIOLANDSLIM.ttf');
+}
+
 body{
   display: block;
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: auto;
   font-family: 'Robo Regular', sans-serif;
 }
 .navbarContainer{
@@ -50,7 +55,7 @@ body{
   color: var(--text-color);
 }
 .App{
-  height: 100vh;
+  height: 110vh;
   background-color: var(--secondory-color);
 }
 .App > div .displayBoard{

@@ -1,7 +1,7 @@
 
 export default function Bingoboard({drawnnumbers}){
     const bingoItem = [];
-    for(var i=1;i<101;i++){
+    for(var i=1;i<91;i++){
         bingoItem.push(<div key={i} className={`bingoItem ${drawnnumbers.includes(i)?"numberDrawned" :""} ${drawnnumbers[drawnnumbers.length-1]===i?"isPicked":''}`}>
             {i}
         </div>);

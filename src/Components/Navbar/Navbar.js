@@ -12,7 +12,7 @@ export default function Navbar({handleStart , showSettingPopup}){
     return (
         <div className="navbarContainer">
             <h1 style={{margin:'0'}}>This is Navbar</h1>
-            <div className="d-flex justify-content-around" style={{fontSize:'20px'}}>
+            <div className="d-flex justify-content-around" style={{fontSize:'20px',cursor:'pointer'}}>
                 <FaPlay className={`mx-3 ${clicked?'disabled':''}`} aria-disabled={{clicked}} onClick={handleClickFlagUpdate}></FaPlay>
                 <FaInfo className="mx-3" data-tooltip-id="game-info"></FaInfo>
                 <IoSettings className="mx-3" onClick={showSettingPopup}></IoSettings>
