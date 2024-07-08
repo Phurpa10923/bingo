@@ -5,7 +5,7 @@ import Drawnnumber from "./Components/Drawnnumber/Drawnnumber";
 import { useState, useEffect, useRef } from "react";
 import { pickAball } from "./Service/Generaterandno";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Gamesetting from "./Components/Gamesetting.js/Gamesetting";
+import Gamesetting from "./Components/Gamesetting/Gamesetting";
 function App() {
   const [latestDrawnNumber, setLatestDrawnNumber] = useState(0);
   const [drawnnumbers, setDrawnNumbers] = useState([]);

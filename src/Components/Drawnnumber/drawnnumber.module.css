@@ -10,6 +10,7 @@
     width: 60px;
     height: 60px;
     border-radius: 30px;
+    margin: 10px;
     display: grid;
     grid-template-columns:repeat(2,1fr);
     color: var(--fourth);
@@ -25,4 +26,9 @@
 }
 .numberCube:nth-child(odd){
     background-color:var(--fourth);
+}
+.prevno{
+    background-color: var(--third-color);
+    color: var(--primary-color);
+    font-size: 100px;
 }

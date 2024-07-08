@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { FaPlay ,  FaInfo ,FaTicketAlt} from "react-icons/fa";
+import logo from '../../Bingo.png'
 import { IoSettings } from "react-icons/io5";
 import { Tooltip } from "react-tooltip";
 
@@ -11,7 +12,7 @@ export default function Navbar({handleStart , showSettingPopup}){
     }    
     return (
         <div className="navbarContainer">
-            <h1 style={{margin:'0'}}>This is Navbar</h1>
+            <div className="d-flex align-items-center"><img src={logo} alt="Logo" style={{width:'50px', height:'50px',aspectRatio:1}}></img><h1 className="m-2 d-none d-sm-flex">Bingo</h1></div>
             <div className="d-flex justify-content-around" style={{fontSize:'20px',cursor:'pointer'}}>
                 <FaPlay className={`mx-3 ${clicked?'disabled':''}`} aria-disabled={{clicked}} onClick={handleClickFlagUpdate}></FaPlay>
                 <FaInfo className="mx-3" data-tooltip-id="game-info"></FaInfo>
