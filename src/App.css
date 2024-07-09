@@ -1,0 +1,161 @@
+:root{
+  --primary-color:rgb(226,183,20);
+  --secondory-color:rgb(50,52,55);
+  --third-color:rgb(44,46,49);
+  --fourth:#646669;
+  --text-color:#d1d0c5;
+
+/* Overriden Tooltip styles */
+  --rt-color-white: #fff;
+  --rt-color-dark: #222;
+  --rt-color-success: #8dc572;
+  --rt-color-error: #be6464;
+  --rt-color-warning: #f0ad4e;
+  --rt-color-info: #337ab7;
+  --rt-opacity: 1;
+  --rt-transition-show-delay: 0.15s;
+  --rt-transition-closing-delay: 0.15s;
+}
+@font-face {
+  font-family: 'Robo Regular';
+  src: url('/public/font/Robo/RobotoMono-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Clock';
+  src: url('/public/font/Clock/RADIOLANDSLIM.ttf');
+}
+
+body{
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  font-family: 'Robo Regular', sans-serif;
+}
+.navbarContainer{
+  display: flex;
+  width: 100%;
+  height: 7vh;
+  background-color: var(--primary-color);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+}
+.navbarContainer button{
+  height: 30px;
+  border: none;
+  font-size: 14px;
+  transition: all 0.3s;
+  width: 100px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.navbarContainer button:hover{
+  color: var(--text-color);
+}
+.App{
+  height: 110vh;
+  background-color: var(--secondory-color);
+}
+.App > div .displayBoard{
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: hidden;
+}
+.App > div .displayBoard > span{
+  font-size: 50px;
+  text-align: center;
+  color: var(--text-color);
+}
+.bingoBoard{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0% 5%;
+  height: 70vh;
+}
+.bingoBoard>div{
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(10,1fr);
+  grid-template-rows: repeat(10,2fr);
+  gap: 10px;
+  grid-row: auto;
+}
+
+.bingoItem{
+  position: relative;
+  cursor: pointer;
+  width: 60px;
+  border-radius: 30px;
+  background-color:var(--third-color);
+  color: var(--fourth);
+  border: 0.5px solid var(--fourth);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+  transition: all 0.2s ;
+  background: transparent;
+}
+.bingoItem:hover{
+  transform: scale(1);
+  box-shadow: 0px 0px 3px 1px var(--text-color);
+}
+.numberDrawned{
+  z-index: 2;
+  color: var(--secondory-color);
+  transform: scale(1.1);
+}
+.numberDrawned::before{
+  position: absolute;
+  content: '';
+  width: 50px;
+  border-radius: 25px;
+  z-index: -1;
+  aspect-ratio: 1;
+  animation: drawn 1s ease;
+  background-color: var(--primary-color);
+}
+
+@keyframes drawn {
+  0%{
+    transform:  scale(0);
+  }
+  100%{
+    transform:  scale(1);
+  }
+}
+.timer{
+  height: 6px;
+  background: linear-gradient(to right,var(--secondory-color),var(--primary-color));
+  transition: width 1s linear 0s;
+}
+.start{
+  background-color: var(--secondory-color);
+  color:var(--text-color);
+}
+.stop{
+  background-color: var(--third-color);
+  color:var(--fourth);
+  box-shadow: 0px 0px 3px var(--primary-color) inset;
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+#game-info{
+  opacity: 1;
+}
+#game-info span{
+  display: block;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+#game-info u{
+  color: var(--primary-color);
+}

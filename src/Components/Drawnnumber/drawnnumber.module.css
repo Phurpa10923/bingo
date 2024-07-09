@@ -1,0 +1,34 @@
+.drawnnumberContainer{
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.numberCube{
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    margin: 10px;
+    display: grid;
+    grid-template-columns:repeat(2,1fr);
+    color: var(--fourth);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    border: 0.5px solid var(--fourth);
+}
+.numberCube:nth-child(odd){
+    background-color:var(--secondory);
+    color: var(--primary-color);
+}
+.numberCube:nth-child(odd){
+    background-color:var(--fourth);
+}
+.prevno{
+    background-color: var(--third-color);
+    color: var(--primary-color);
+    font-size: 100px;
+}
