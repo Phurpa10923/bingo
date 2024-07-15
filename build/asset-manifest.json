@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/bingo/static/css/main.bf528707.css",
+    "main.js": "/bingo/static/js/main.646f7d43.js",
+    "static/js/453.172e9ae7.chunk.js": "/bingo/static/js/453.172e9ae7.chunk.js",
+    "static/media/Logo.png": "/bingo/static/media/Logo.e1b65f6a15215941d5cd.png",
+    "static/media/RobotoMono-Regular.ttf": "/bingo/static/media/RobotoMono-Regular.94ffabb10cbc81ee42ba.ttf",
+    "static/media/RADIOLANDSLIM.ttf": "/bingo/static/media/RADIOLANDSLIM.b8330bcc7942d5763d4e.ttf",
+    "index.html": "/bingo/index.html",
+    "main.bf528707.css.map": "/bingo/static/css/main.bf528707.css.map",
+    "main.646f7d43.js.map": "/bingo/static/js/main.646f7d43.js.map",
+    "453.172e9ae7.chunk.js.map": "/bingo/static/js/453.172e9ae7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bf528707.css",
+    "static/js/main.646f7d43.js"
+  ]
+}

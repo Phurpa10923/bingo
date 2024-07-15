@@ -150,7 +150,7 @@ function App() {
       <footer className="pb-4 footer-cont">
         <div className="d-flex flex-row col-6" >
           <a href="https://github.com/Phurpa10923" target={`_blank${Math.random()}`}><FaGithub></FaGithub> Github</a>
-          <a href="www.linkedin.com/in/phurpa-tsering-0767b1148" target={`_blank${Math.random()}`}><FaLinkedin></FaLinkedin> Linkedin</a>
+          <a href="https://www.linkedin.com/in/phurpa-tsering-0767b1148" target={`_blank${Math.random()}`}><FaLinkedin></FaLinkedin> Linkedin</a>
           <a href="https://portfolio-w3g9.onrender.com/" target={`_blank${Math.random()}`}><TbWorldWww></TbWorldWww> My Portfolio</a>
         </div>
         <div className="d-flex col-6 justify-content-end">
