@@ -1,0 +1,57 @@
+.mainContainer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 30;
+    opacity: 0;
+    transition: all 0.3s linear;
+}
+.mainContainer .backcover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondory-color);
+    opacity: 0.8;
+}
+.buttonscontainer{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--third-color);
+    min-height: 250px;
+    height: auto;
+    box-shadow: 0px 0px 5px var(--text-color) ;
+    color: var(--text-color);
+    font-family: 'Robo Regular';
+    z-index: 31;
+}
+.buttonscontainer .oldupload{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.mainContainer.show {
+    opacity: 1;
+    display: flex;
+}
+
+.mainContainer.hide {
+    opacity: 0;
+    display: none;
+    z-index: -10;
+}
+
+.mainContainer button{
+    height: 70px;
+    background: transparent;
+    color: inherit;
+}
+
+.closeAudioUpload{
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+}
+

@@ -1,18 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const gameSettingReducer = createSlice({
+export const gameSettingSlice = createSlice({
     name:'gameSetting',
     initialState:{
         timer:5,
         gamename:'default',
+        isManual:false
     },
     reducers:{
-        gamename:(state,action)=>{
+        setGameName:(state,action)=>{
             state.gamename=action.payload;
         },
-        timer:(state,action)=>{
+        setManualFlag:(state,action)=>{
+            state.isManual=action.payload;
+        },
+        setTimer:(state,action)=>{
             state.timer=action.payload;
         }
     }
     
 })
+
+export const{setGameName,setManualFlag,setTimer} = gameSettingSlice.actions;
+export default gameSettingSlice.reducer;
