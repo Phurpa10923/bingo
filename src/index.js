@@ -5,11 +5,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './Stores/GamesettingStore.js';
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import Ticket from './ticket.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <App />
+    <BrowserRouter>
+      <Routes>
+          <Route path='/' Component={App}></Route>
+          <Route path='/bingo' Component={App}></Route>
+          <Route path='/ticket' Component={Ticket}></Route>
+      </Routes>
+    </BrowserRouter>
   </Provider>
 );
 

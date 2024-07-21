@@ -310,3 +310,86 @@ body{
 .footer-cont a:hover{
   opacity: 1;
 }
+
+.ticket-container{
+  position: relative;
+  width: 100%;
+  height:90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ticket-container .ticket-cell{
+  position: relative;
+  width: 80px;
+  aspect-ratio: 1;
+  border: 1px solid white;
+  color: var(--text-color);
+  cursor: pointer;
+}
+.ticket-container .ticket-slider{
+  position: absolute;
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  top: 10vh;
+}
+.ticket{
+  position: relative;
+}
+.ticket-slider-item{
+  width: 10px;
+  aspect-ratio: 1;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  border: 1px solid var(--text-color);
+}
+.ticket-slider-item.active-item{
+  border: 2px solid var(--primary-color);
+  transform: scale(1.4);
+}
+.ticket-slider-item:hover{
+  transform: scale(1.4);
+}
+
+.ticket-cell::before,.ticket-cell::after{
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 3px;
+  background-color: var(--primary-color);
+  opacity: 0.6;
+  transition: all 0.3s ease-in-out;
+}
+.ticket-cell::after{
+  transition: all 0.3s ease-in-out 0.3s;
+}
+.crossed::before{
+  width: 100%;
+  transform: rotateZ(45deg) translate(0%, 50%) ;
+}
+.crossed::after{
+  width: 100%;
+  transform:translate(0%, 50%)  rotateZ(-45deg);
+}
+
+@media  only screen and (max-width:400px) {
+  .App{
+    font-size: 12px;
+  }
+  .ticket-container .ticket-cell{
+    width: 30px;
+  }
+  .ticket-slider-item{
+    width: 6px;
+    border-radius: 3px;
+    border: 0.5px solid var(--text-color);
+  }
+  .ticket-slider-item.active-item{
+    border: 1px solid var(--primary-color);
+    transform: scale(1.4);
+  }
+}
