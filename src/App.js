@@ -13,7 +13,7 @@ import { db } from "./indexdb";
 import { FaGithub, FaLinkedin, FaPlay } from "react-icons/fa";
 import { TbWorldWww } from "react-icons/tb";
 import AudioUpload from "./Components/BingoBoard/AudioUpload";
-import TicketGen from "./Components/TicketGenerator/TicketGen";
+import TicketGen from "./Components/TicketGenerator/TicketGenerator.js"
 
 function App() {
   const [latestDrawnNumber, setLatestDrawnNumber] = useState(0);
