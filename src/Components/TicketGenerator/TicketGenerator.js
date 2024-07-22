@@ -25,7 +25,7 @@ export default function TicketGen({ ticketPopup, setTicketPopup }) {
   }
   const handleTicketGen =()=>{
     const tickets=generateTicket(ticketType,quantity);
-    setTicketUrl(`${window.location.href}ticket?tickets=${JSON.stringify(tickets)}&gameinfor=${JSON.stringify(gameInfor)}`);
+    setTicketUrl(`${window.location.href}?tickets=${JSON.stringify(tickets)}&gameinfor=${JSON.stringify(gameInfor)}`);
   }
   const copyLink = ()=>{
     navigator.clipboard.writeText(ticketUrl);
