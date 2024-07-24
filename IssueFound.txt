@@ -1,8 +1,5 @@
-1. The setting button does not work when the setting pop up is closed other than clicking setting like clicking out of pop up .
+To improve the drawing of number :
 
-2. In setting pop up , need to link the manula checkbox and the timer to each other and also the next button below the drawn number board .
- If checked , no timer should be there and next buitton should be visible 
- If unchecked , timer field should be visible and next should be invisible . 
- By default , the timer will be 5s which will also mean the next button will be invisible .
-
- 3. Also need to make the loading line at top to be relevant based on the manual value .
+1 .  The auto drawing should also handle pausing of the game or ending of game in middle.
+2 .  Look into game setting plus the ticket generator slider UI in app .
+3 .  Improve the sharing of ticket .

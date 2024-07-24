@@ -20,11 +20,11 @@ import Ticket from "./ticket.js";
 function App() {
   const [latestDrawnNumber, setLatestDrawnNumber] = useState(0);
   const [drawnnumbers, setDrawnNumbers] = useState([]);
-  const [count, setCount] = useState(5);
   const [isCounting, setIsCounting] = useState(false);
   const countRef = useRef(null);
   const numberPickRef = useRef(null);
   const gamesetting = useSelector((state) => state.gameSetting);
+  const [count, setCount] = useState(gamesetting.timer||5);
   const alertMessage = useSelector((state) => state.alertMessage);
   const [settingPopup, setSettingPopup] = useState(false);
   const [ticketpopup, setTicketPopup] = useState(false);
@@ -53,28 +53,22 @@ function App() {
     setLatestDrawnNumber(picked);
   };
   useEffect(() => {
-    if (isCounting && !gamesetting.isManual) {
-      countRef.current = setInterval(() => {
-        setCount((prevCount) => (prevCount === 0 ? 5 : prevCount - 1));
-      }, 1000);
-      return () => clearInterval(countRef.current);
-    } else {
-      clearInterval(countRef.current);
-    }
-  }, [isCounting]);
+    setCount(parseInt(gamesetting.timer));
+  }, [gamesetting.timer]);
 
   const synthe = window.speechSynthesis;
 
   useEffect(() => {
     if (!gamesetting.isManual) {
       if (isCounting) {
+        clearInterval(numberPickRef.current);
         numberPickRef.current = setInterval(async () => {
           dispatch(setMessage(""));
-          if (drawnnumbers.length > 90) {
-            clearInterval(numberPickRef.current);
-            return;
+          if (drawnnumbers.length >= 90) {
+              clearDrawnedNumbers();
+              return;
           }
-          const picked = pickAball(1, 90, drawnnumbers);
+          let picked = pickAball(1, 90, drawnnumbers);
           const base64 = await db.audio
             .where("name")
             .equals(`${picked}audioBase64`)
@@ -92,13 +86,17 @@ function App() {
           }
           setDrawnNumbers((prevDrawnNumbers) => [...prevDrawnNumbers, picked]);
           setLatestDrawnNumber(picked);
-        }, 6000);
-        return () => clearInterval(numberPickRef.current);
+        }, (parseInt(gamesetting.timer)+1)*1000);
+        countRef.current = setInterval(() => {
+          setCount((prevCount) => (prevCount === 0 ? gamesetting.timer : prevCount - 1));
+        }, 1000);
+        return () => clearInterval(countRef.current);clearInterval(numberPickRef.current);
       } else {
         clearInterval(numberPickRef.current);
+        clearInterval(countRef.current);
       }
     }
-  }, [isCounting, drawnnumbers]);
+  }, [isCounting,drawnnumbers]);
 
   const handleStart = (clicked) => {
     setIsCounting(clicked);
@@ -120,6 +118,12 @@ function App() {
   const closeAlert = () => {
     dispatch(setMessage(""));
   };
+  const clearDrawnedNumbers = ()=>{
+    setDrawnNumbers([]);
+    setIsCounting(false);
+    dispatch(setMessage("Game Ended !"));
+    clearInterval(numberPickRef.current);
+  }
   const [searchparams] = useSearchParams();
   const gameInfor = JSON.parse(searchparams.get("gameinfor")) || {};
   const [showUpload, setUploadFlag] = useState({ show: false, number: "0" });
@@ -177,15 +181,16 @@ function App() {
           <div className="d-flex align-item-center flex-column gap-3 mb-3">
             <div
               className={`${gamesetting.isManual ? "d-none" : "d-flex"} timer`}
-              style={{ width: `${(count * 100) / 5}%` }}
+              style={{ width: `${(count * 100) / gamesetting.timer}%` }}
             ></div>
-            <div className="d-flex justify-content-around mt-5">
+            <div className="drawnnumber-bingoboard-container d-flex flex-column flex-md-row align-items-center align-items-md-start gap-3 mt-3 mt-lg-5">
               <Drawnnumber
                 drawnedNumbers={drawnnumbers}
                 drawaball={drawAballIfManual}
                 gameStarted={isCounting}
+                clearDrawnedNumbers={clearDrawnedNumbers}
               />
-              <div className="col-8">
+              <div className="col-lg-8 col-md-8 col-sm-9">
                 <Bingoboard
                   drawnnumbers={drawnnumbers}
                   latestDrawnNumber={latestDrawnNumber}
@@ -215,26 +220,28 @@ function App() {
               <a
                 href="https://github.com/Phurpa10923"
                 target={`_blank${Math.random()}`}
+                className="d-flex gap-2 align-items-center"
               >
-                <FaGithub></FaGithub> Github
+                <FaGithub></FaGithub><span className="d-none d-lg-flex">Github</span> 
               </a>
               <a
                 href="https://www.linkedin.com/in/phurpa-tsering-0767b1148"
                 target={`_blank${Math.random()}`}
+                className="d-flex gap-2 align-items-center"
               >
-                <FaLinkedin></FaLinkedin> Linkedin
+                <FaLinkedin></FaLinkedin> <span className="d-none d-lg-flex">Linkedin</span>
               </a>
               <a
                 href="https://portfolio-w3g9.onrender.com/"
                 target={`_blank${Math.random()}`}
+                className="d-flex gap-2 align-items-center"
               >
-                <TbWorldWww></TbWorldWww> My Portfolio
+                <TbWorldWww></TbWorldWww> <span className="d-none d-lg-flex">My Portfolio</span>
               </a>
             </div>
             <div className="d-flex col-6 justify-content-end">
               <img
                 src={`${process.env.PUBLIC_URL}/MyName.png`}
-                style={{ width: "100px" }}
                 alt="Description"
               />
             </div>

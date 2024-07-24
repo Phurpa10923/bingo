@@ -21,15 +21,13 @@
 }
 
 .popupcontainer input{
-    width: 200px;
     border: none;
-    border-radius: 15px;
+    border-radius: 9px;
     padding: 5px 10px;
 }
 .popupcontainer input[type='number']{
-    width: 150px;
     border: none;
-    border-radius: 10px;
+    border-radius: 9px;
     padding: 5px 10px;
 }
 .popupcontainer input::after{

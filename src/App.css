@@ -83,12 +83,16 @@ body{
   min-height: 70vh;
 }
 .bingoBoard>div{
-  width: 80%;
   display: grid;
   grid-template-columns: repeat(10,1fr);
   grid-template-rows: repeat(9,2fr);
   gap: 10px;
   grid-row: auto;
+}
+.drawnnumber-bingoboard-container{
+  display: flex;
+  justify-content: center;
+  
 }
 
 .bingoItem{
@@ -279,6 +283,9 @@ body{
   border-radius: 20px;
   animation: 0.8s ease-in-out infinite 0s foof;
 }
+.navbarContainer img{
+  max-width: 200px;
+}
 
 
 
@@ -331,7 +338,6 @@ body{
 }
 .ticket-container .ticket-slider{
   position: absolute;
-  width: 100px;
   display: flex;
   justify-content: space-between;
   top: 10vh;
@@ -343,6 +349,7 @@ body{
   width: 10px;
   aspect-ratio: 1;
   border-radius: 5px;
+  margin: 0px 10px;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
   border: 1px solid var(--text-color);
@@ -375,8 +382,14 @@ body{
   width: 100%;
   transform:translate(0%, 50%)  rotateZ(-45deg);
 }
+footer img{
+  width: 100px;
+}
+input.invalid-input-value::placeholder{
+  color: red;
+}
 
-@media  only screen and (max-width:400px) {
+@media  only screen and (max-width:480px) {
   .App{
     font-size: 12px;
   }
@@ -392,4 +405,80 @@ body{
     border: 1px solid var(--primary-color);
     transform: scale(1.4);
   }
+  footer img{
+    width: 70px;
+  }
+  .bingoBoard{
+    width: 100%;
+    min-height: 50vh;
+    align-items: center;
+    padding: 0 0;
+  }
+  .drawnnumber-bingoboard-container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .bingoBoard>div{
+    padding: 0;
+    gap: 6px;
+  }
+  .bingoItem{
+    width: 30px;
+  }
+  .numberDrawned::before{
+    width: 30px;
+    border-radius: 15px;
+  }
+  .navbarContainer img{
+    max-width: 100px;
+  }
+  .footer-cont a{
+    margin: 0px 8px;
+    font-size: 18px;
+  }
+  .site-information{
+    font-size: 9px;
+  }
+}
+@media  only screen and (min-width:480px) and (max-width:1200px) {
+  .App{
+    font-size: 12px;
+  }
+  .ticket-container .ticket-cell{
+    width: 50px;
+  }
+  .ticket-slider-item{
+    width: 6px;
+    border-radius: 3px;
+    border: 0.5px solid var(--text-color);
+  }
+  .ticket-slider-item.active-item{
+    border: 1px solid var(--primary-color);
+    transform: scale(1.4);
+  }
+  footer img{
+    width: 50px;
+  }
+  .bingoBoard{
+    padding: 0 0;
+    gap: 6px;
+  }
+  .bingoItem{
+    width: 40px;
+    padding: 0 0;
+  }
+  .numberDrawned::before{
+    width: 40px;
+    border-radius: 20px;
+  }
+  .footer-cont a{
+    font-size: 22px;
+  }
+  .navbarContainer img{
+    max-width: 100px;
+  }
+  .site-information{
+    font-size:11px;
+  }
+ 
 }

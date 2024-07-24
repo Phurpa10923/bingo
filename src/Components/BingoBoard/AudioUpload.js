@@ -59,7 +59,7 @@ export default function AudioUpload({ showUpload, setUploadFlag }) {
       } d-flex justify-content-center align-items-center`}
     >
       <div className={style.backcover}></div>
-      <div className={`${style.buttonscontainer} col-4`}>
+      <div className={`${style.buttonscontainer} col-10 col-lg-4`}>
         <div className={`${style.closeAudioUpload} col-12 px-3 py-2`}>
           <span
             className="col-6"
@@ -75,25 +75,21 @@ export default function AudioUpload({ showUpload, setUploadFlag }) {
           </div>
         </div>
         <div className={style.oldupload}>
-          <span>
             {audioFile[0] ? (
-              <div className="d-flex flex-column">
-                <div className="d-flex align-items-center mt-4">
-                  <audio controls>
+                <div className="d-flex flex-column flex-lg-row align-items-center justify-content-around mt-4 col-12 gap-2">
+                  <audio controls className={'col-8 col-lg-8'}>
                     <source
                       src={`data:audio/mp3;base64,${audioFile[0].stream}`}
                     ></source>
                     <span>Audio not supported</span>
                   </audio>
-                  <u className="mx-2" style={{ cursor: "pointer" }}>
+                  <u className="mx-2 col-8 col-lg-2" style={{ cursor: "pointer",whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}>
                     {audioFile[0].filename}
                   </u>
                 </div>
-              </div>
             ) : (
               "There is no old attached audio"
             )}
-          </span>
         </div>
         <div className="col-12 my-4 d-flex justify-content-around align-items-end">
           <button className="col-4" onClick={uploadAudio}>

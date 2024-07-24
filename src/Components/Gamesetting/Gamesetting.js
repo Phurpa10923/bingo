@@ -30,7 +30,7 @@ export default function Gamesetting({ settingPopup, setPopup, setUploadFlag }) {
       dispatch(setGameName(nameRef.current.value));
     }
     if (parseInt(timerRef.current.value) > 0) {
-      dispatch(setTimer(timerRef.current.value));
+      dispatch(setTimer(parseInt(timerRef.current.value)));
     }
     dispatch(setManualFlag(isManual));
     hideSetting();
@@ -66,15 +66,15 @@ export default function Gamesetting({ settingPopup, setPopup, setUploadFlag }) {
         className={Style.backpage + " col-12 m-0 p-0 h-100"}
         onClick={hideSetting}
       ></div>
-      <div className={"col-4 col-sm-6 col-md-4 " + Style.popupcontainer}>
+      <div className={"col-10 col-md-4 " + Style.popupcontainer}>
         <div
           className={
             Style.header + " d-flex align-item-center justify-content-between"
           }
         >
-          <div>
+          <div className="d-flex align-items-center gap-2">
             <span>Set up</span>
-            <IoOptions className="mx-3"></IoOptions>
+            <IoOptions ></IoOptions>
           </div>
         </div>
         <div className="row">

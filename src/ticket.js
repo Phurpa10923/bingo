@@ -116,7 +116,6 @@ export default function Ticket() {
         <div className="d-flex col-6 justify-content-end">
           <img
             src={`${process.env.PUBLIC_URL}/MyName.png`}
-            style={{ width: "100px" }}
             alt="Description"
           />
         </div>

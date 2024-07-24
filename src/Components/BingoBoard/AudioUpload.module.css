@@ -5,7 +5,7 @@
     display: flex;
     z-index: 30;
     opacity: 0;
-    transition: all 0.3s linear;
+    transition: all 0.1s linear;
 }
 .mainContainer .backcover{
     position: absolute;
@@ -55,3 +55,13 @@
     justify-content: center;
 }
 
+@media  only screen and (max-width:480px) {
+    .audioStyle{
+        width: 100px;
+    }
+    
+}
+@media  only screen and (min-width:480px) and (max-width:1000px) {
+
+
+}

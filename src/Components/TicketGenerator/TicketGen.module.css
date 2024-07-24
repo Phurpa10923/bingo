@@ -22,10 +22,9 @@
     border-radius: 10px 0px 0px 0px;
 }
 .popupcontainer select{
-    width: 200px;
     padding: 5px 10px;
     border: none;
-    border-radius: 4px;
+    border-radius: 9px;
     background-color: #f1f1f1;
 }
 .popupcontainer select option{
@@ -36,15 +35,13 @@
 
 
 .popupcontainer input{
-    width: 200px;
     border: none;
-    border-radius: 15px;
+    border-radius: 9px;
     padding: 5px 10px;
 }
 .popupcontainer input[type='number']{
-    width: 150px;
     border: none;
-    border-radius: 10px;
+    border-radius: 9px;
     padding: 5px 10px;
 }
 .popupcontainer input::after{

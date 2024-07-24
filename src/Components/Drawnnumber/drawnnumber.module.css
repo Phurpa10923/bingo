@@ -15,7 +15,6 @@
     border-radius: 30px;
     margin: 10px;
     display: grid;
-    background-color: var(--secondory-color);
     grid-template-columns:repeat(2,1fr);
     color: var(--fourth);
     display: flex;
@@ -23,7 +22,7 @@
     align-items: center;
     aspect-ratio: 1;
     z-index: 0;
-    border: 0.5px solid var(--fourth);
+    border: 2 solid var(--fourth);
 }
 .numberCube::before {
     content: '';
@@ -32,7 +31,8 @@
     width: 70%;
     height: 70%;
     border-radius: 50%;
-    background-color: #fff; 
+    background-color: transparent; 
+    color: var(--text-color);
 }
 .numberCube::after {
     content: '';
@@ -41,8 +41,7 @@
     width: 90%;
     height: 90%;
     border-radius: 50%;
-    background-color: transparent;
-    border: 1px solid white; 
+    border: 2px solid var(--secondory-color); 
 }
 .numberCube span{
     z-index: 1;
@@ -66,3 +65,29 @@
 .nextnumber button:hover{
     box-shadow:  0 0 5px var(--secondory-color) ;
 }
+
+@media  only screen and (max-width:480px) {
+    .prevno{
+        font-size: 30px;
+        box-shadow: 0px 0px 7px var(--text-color) inset;
+    }
+    .numberCube{
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        margin: 5px;
+    }
+  }
+  @media  only screen and (min-width:480px) and (max-width:1200px) {
+    .prevno{
+        font-size: 50px;
+        box-shadow: 0px 0px 7px var(--text-color) inset;
+    } 
+    .numberCube{
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        margin: 5px;
+    }
+   
+  }
