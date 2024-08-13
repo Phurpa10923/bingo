@@ -103,7 +103,7 @@ export default function TicketGen({ ticketPopup, setTicketPopup }) {
           <div className={`${ticketUrl?'d-flex':'d-none'} col-12 m-3 row justify-content-center gap-3`}>
             <span style={{textAlign:'center',fontWeight:'bold'}}>Generated QR</span>
             <QRCode value={ticketUrl}   style={{padding:'10px',width:'auto', border:'1px solid black'}}></QRCode>
-            <div className="col-6 d-flex  align-items-center flex-column gap-3" style={{color:'black',cursor:'pointer'}}>
+            <div className="col-12 d-flex  align-items-center flex-column gap-3" style={{color:'black',cursor:'pointer'}}>
               <span style={{textAlign:'center',fontWeight:'bold'}}>Share :</span>
               <div className="d-flex justify-content-around align-items-center" style={{width:'30px',height:'30px',borderRadius:'15px',background:'white'}}>
                 <FaLink  onClick={copyLink}></FaLink>
